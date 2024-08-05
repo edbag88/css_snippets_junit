@@ -1,0 +1,28 @@
+//на каком языке
+plugins {
+    id 'java-library'
+}
+
+//репозиторий
+repositories {
+    mavenCentral()
+}
+//зависимости
+dependencies {
+    testImplementation(
+            'com.codeborne:selenide:7.3.3',
+            'org.slf4j:slf4j-simple:2.0.13',
+            'org.junit.jupiter:junit-jupiter:5.10.2',
+
+    )
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
+//UTF8
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}//на каком языке
